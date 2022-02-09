@@ -6,6 +6,10 @@ const PORT = process.env.PORT || 8080;
 app.use(express.json()); //agrgar esto para que lea del body parsea a json
 app.use(express.urlencoded({ extended: true }));
 
+app.get("/", (req, res) => {  
+  res.send('<h1 style= "color : blue; text-align: center; margin-top:150px;"> Hola Mundo!!! </h1>')
+});
+
 app.get("/products", (req, res) => {
   contenedor1.getAll().then((txt) => {
     res.send(txt);
