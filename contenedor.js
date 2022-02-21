@@ -66,6 +66,7 @@ class Contenedor {
       await fs.promises.writeFile(this.nombreArchivo, JSON.stringify(result));
       return result;
     }
+
   
     async deleteAll() {
       try {
