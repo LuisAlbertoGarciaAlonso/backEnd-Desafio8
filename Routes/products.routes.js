@@ -28,19 +28,19 @@ router.get("/:id", (req, res) => {
     });
 });
 
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
     const { name, category, price, image } = req.body;
     if (!name || !category || !price || !image) {
         return res.status(400).json({ succes: false, error: 'Wrong body format' });
     }
     const newProduct = {
-        id: contenedor1.length + 1,
         name,
         category,
         price,
         image
     };
-    contenedor1.save(newProduct);
+    const id= await contenedor1.save(newProduct);
+    newProduct.id=id;
     return res.json({ success: true, result: newProduct });
 });
 

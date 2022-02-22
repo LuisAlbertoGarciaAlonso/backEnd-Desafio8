@@ -79,7 +79,7 @@ class Contenedor {
   }
   
   const producto = {
-    id: "6",
+        
     name: "CANANA PORTA HERRAMIENTAS",
     category: "porta herramientas",
     price: 1000,
